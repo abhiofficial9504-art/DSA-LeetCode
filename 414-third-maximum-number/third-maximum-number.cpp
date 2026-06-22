@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int thirdMax(vector<int>& nums) {
+      set<int> st(nums.begin(), nums.end());
+
+      if(st.size() < 3){
+        return *st.rbegin();
+      }
+      else{
+        auto it = st.rbegin(); 
+        it++;
+        it++;
+
+        return *it;
+      }
+    }
+};
