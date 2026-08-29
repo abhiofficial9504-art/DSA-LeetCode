@@ -1,1 +1,1 @@
-<h2>running-sum-of-1d-array Notes</h2><hr>[ Time taken: 3d 13hrs 2m 0s ]
+<h2>running-sum-of-1d-array Notes</h2><hr>[ Time taken: 3d 13hrs 6m 20s ]
