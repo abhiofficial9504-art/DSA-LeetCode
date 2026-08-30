@@ -4,10 +4,10 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        hashMap = {}
-        for num in nums:
-            hashMap[num] = hashMap.get(num,0) + 1
 
-        for num in hashMap:
-            if hashMap[num] == 1:
-                return num
+        ans = 0
+
+        for num in nums:
+            ans = ans ^ num
+        
+        return ans
