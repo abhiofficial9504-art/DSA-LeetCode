@@ -22,4 +22,3 @@ class Solution(object):
                 return False
 
         return freq == {}
-        
