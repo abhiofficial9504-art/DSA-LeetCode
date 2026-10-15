@@ -1,24 +1,17 @@
-class Solution(object):
-    def isAnagram(self, s, t):
-        """
-        :type s: str
-        :type t: str
-        :rtype: bool
-        """
-        freq = {}
-
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        freq_of_t = {}
+        freq_of_s = {}
         if len(s) != len(t):
             return False
 
-        for ch in s:
-            freq[ch] = freq.get(ch, 0) + 1
-
         for ch in t:
-            if ch in freq:
-                freq[ch] -= 1
-                if freq[ch] == 0:
-                    del freq[ch]
-            else: 
-                return False
+            freq_of_t[ch] = freq_of_t.get(ch, 0) + 1
 
-        return freq == {}
+        for ch in s:
+            freq_of_s[ch] = freq_of_s.get(ch, 0) + 1
+
+        if freq_of_t == freq_of_s:
+            return True
+        else:
+            return False 
