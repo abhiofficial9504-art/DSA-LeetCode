@@ -1,10 +1,7 @@
-class Solution(object):
-    def groupAnagrams(self, strs):
-        """
-        :type strs: List[str]
-        :rtype: List[List[str]]
-        """
+class Solution:
+    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
         group = {}
+
         for word in strs:
             key = "".join(sorted(word))
             if key in group:
