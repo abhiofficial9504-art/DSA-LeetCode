@@ -5,38 +5,27 @@ class Solution(object):
         :rtype: bool
         """
         stack = []
-        top = -1
 
         for ch in s:
-            if ch == '(' or ch == '{' or ch == '[':
+            if ch == "[" or ch == "{" or ch == "(":
                 stack.append(ch)
-                top += 1
+            else:
+                if not stack:
+                    return False
 
-            if ch == ')':
-                if not stack:
-                    return False
-                elif stack[top] == '(':
-                    stack.pop()
-                    top -= 1
+                if ch == "]":
+                    if stack[-1] == "[":
+                        stack.pop()
+                    else:
+                        return False
+                elif ch == "}":
+                    if stack[-1] == "{":
+                        stack.pop()
+                    else:
+                        return False
                 else:
-                    return False
-            elif ch == '}':
-                if not stack:
-                    return False
-                elif stack[top] == '{':
-                    stack.pop()
-                    top -= 1
-                else:
-                    return False
-            elif ch == ']':
-                if not stack:
-                    return False
-                elif stack[top] == '[':
-                    stack.pop()
-                    top -= 1
-                else:
-                    return False
-        if not stack:
-            return True
-        else:
-            return False
+                    if stack[-1] == "(":
+                        stack.pop()
+                    else:
+                        return False
+        return len(stack) == 0
