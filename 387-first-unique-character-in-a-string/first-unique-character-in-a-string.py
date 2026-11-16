@@ -1,11 +1,11 @@
 class Solution:
     def firstUniqChar(self, s: str) -> int:
-        freq = {}
+        hash_map = {}
 
         for ch in s:
-            freq[ch] = freq.get(ch, 0) + 1
+            hash_map[ch] = hash_map.get(ch, 0) + 1
 
         for i in range(len(s)):
-            if freq[s[i]] == 1:
+            if hash_map[s[i]] == 1:
                 return i
         return -1
