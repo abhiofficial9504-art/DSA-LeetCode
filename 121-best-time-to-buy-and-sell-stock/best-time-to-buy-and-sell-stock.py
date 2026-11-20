@@ -1,14 +1,11 @@
-class Solution(object):
-    def maxProfit(self, prices):
-        """
-        :type prices: List[int]
-        :rtype: int
-        """
-        mini = float("+inf")
-        maxProfit = 0
-        todayProfit = 0
+class Solution:
+    def maxProfit(self, prices: list[int]) -> int:
+        mini = float("inf")
+        today_profit = 0
+        max_profit = 0
+
         for i in range(len(prices)):
             mini = min(mini, prices[i])
-            todayProfit = prices[i] - mini
-            maxProfit = max(maxProfit, todayProfit)
-        return maxProfit
+            today_profit = prices[i] - mini
+            max_profit = max(max_profit, today_profit)
+        return max_profit
